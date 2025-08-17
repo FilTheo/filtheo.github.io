@@ -4,32 +4,99 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Toggle mobile menu
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
+    // Only proceed if elements exist (for multi-page compatibility)
+    if (navToggle && navMenu) {
+        // Toggle mobile menu
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
 
-    // Close mobile menu when clicking on a nav link
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+        // Close mobile menu when clicking on a nav link
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+            
+            if (!isClickInsideNav && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
+        });
+    }
+
+    // Set active navigation link based on current page
+    function setActiveNavLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            
+            // Get the href attribute and extract the filename
+            const linkHref = link.getAttribute('href');
+            const linkPage = linkHref ? linkHref.split('/').pop() : '';
+            
+            // Set active for exact matches or for index page when on root
+            if (linkPage === currentPage || 
+                (currentPage === 'index.html' && linkHref === 'index.html') ||
+                (currentPage === '' && linkHref === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Set initial active nav link
+    setActiveNavLink();
+
+    // Handle navigation action buttons (search and dark mode)
+    const actionButtons = document.querySelectorAll('.nav-action-btn');
+    
+    actionButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const ariaLabel = this.getAttribute('aria-label');
+            
+            if (ariaLabel === 'Search') {
+                // Placeholder for search functionality
+                console.log('Search functionality would be implemented here');
+            } else if (ariaLabel === 'Toggle dark mode') {
+                // Placeholder for dark mode toggle
+                console.log('Dark mode toggle would be implemented here');
+                toggleDarkMode();
+            }
         });
     });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
+    // Simple dark mode toggle (placeholder implementation)
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
         
-        if (!isClickInsideNav && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-    });
+        // Store preference in localStorage
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+    }
 
-    // Smooth scrolling for navigation links (fallback for browsers that don't support CSS scroll-behavior)
-    navLinks.forEach(function(link) {
+    // Load dark mode preference on page load
+    function loadDarkModePreference() {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+        }
+    }
+
+    // Load preference on page load
+    loadDarkModePreference();
+
+    // Smooth scrolling for any internal anchor links (if they exist on single pages)
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    anchorLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -47,34 +114,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add active state to navigation links based on scroll position
-    function updateActiveNavLink() {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 100; // Offset for navbar
-
-        sections.forEach(function(section) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            const correspondingNavLink = document.querySelector('.nav-link[href="#' + sectionId + '"]');
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                // Remove active class from all nav links
-                navLinks.forEach(function(link) {
-                    link.classList.remove('active');
-                });
+    // Add loading state management for page transitions
+    function addLoadingStateToLinks() {
+        const pageLinks = document.querySelectorAll('a[href$=".html"]');
+        
+        pageLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Add a small loading indicator (optional)
+                document.body.style.cursor = 'wait';
                 
-                // Add active class to current section's nav link
-                if (correspondingNavLink) {
-                    correspondingNavLink.classList.add('active');
-                }
-            }
+                // Reset cursor after a short delay (in case navigation is instant)
+                setTimeout(function() {
+                    document.body.style.cursor = 'default';
+                }, 500);
+            });
         });
     }
 
-    // Update active nav link on scroll
-    window.addEventListener('scroll', updateActiveNavLink);
-    
-    // Set initial active nav link
-    updateActiveNavLink();
+    // Initialize loading states
+    addLoadingStateToLinks();
+
+    // Handle profile audio icon click (placeholder)
+    const profileAudioIcon = document.querySelector('.profile-audio-icon');
+    if (profileAudioIcon) {
+        profileAudioIcon.addEventListener('click', function() {
+            console.log('Profile audio functionality would be implemented here');
+            // You could implement actual audio playback here
+        });
+    }
 });

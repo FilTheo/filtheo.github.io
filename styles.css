@@ -18,12 +18,7 @@ body {
 }
 
 /* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -65,8 +60,8 @@ li {
 }
 
 /* Layout */
-.container {
-    max-width: 900px;
+.content-container {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -77,14 +72,14 @@ li {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: white;
     border-bottom: 1px solid #e5e5e5;
     z-index: 1000;
+    height: 64px;
 }
 
 .nav-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -125,6 +120,30 @@ li {
     text-decoration: none;
 }
 
+.nav-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-action-btn:hover {
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -142,32 +161,32 @@ li {
     transition: 0.3s;
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(135deg, #0D4F3C 0%, #1a5f4a 100%);
-    color: white;
-    padding: 128px 0 64px;
+/* Main Content */
+.main-content {
+    background-color: #0D4F3C;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    padding-top: 64px;
 }
 
-.hero-content {
-    text-align: left;
-}
-
-.profile-section {
+.content-container {
     display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    padding: 4rem 2rem;
     align-items: start;
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+    text-align: center;
+    color: white;
 }
 
 .profile-image-container {
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .profile-image {
@@ -219,56 +238,80 @@ li {
     margin-bottom: 1rem;
 }
 
-.hero-name {
-    font-size: 3rem;
+.profile-name {
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: white;
 }
 
-.hero-name-chinese {
-    font-size: 2rem;
+.profile-name-chinese {
+    font-size: 1.5rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0;
 }
 
-.hero-title {
-    font-size: 1.5rem;
+.profile-title {
+    font-size: 1.25rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
 }
 
-.hero-affiliation {
-    font-size: 1.125rem;
+.profile-affiliation {
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
 }
 
-.hero-links {
+.profile-links {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .contact-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
     color: rgba(255, 255, 255, 0.8);
     transition: all 0.2s ease;
 }
 
 .contact-link:hover {
-    border-color: white;
     color: white;
+    background-color: rgba(255, 255, 255, 0.1);
     text-decoration: none;
     transform: translateY(-2px);
+}
+
+/* Main Section */
+.main-section {
+    color: white;
+}
+
+.content-area {
+    margin-bottom: 3rem;
+}
+
+.content-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.content-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin-bottom: 2rem;
 }
 
 .cv-download-btn {
@@ -290,24 +333,6 @@ li {
     text-decoration: none;
     color: white;
     transform: translateY(-2px);
-}
-
-.about-section {
-    margin-bottom: 3rem;
-}
-
-.about-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: white;
-}
-
-.about-section p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 800px;
 }
 
 .info-sections {
@@ -380,27 +405,110 @@ li {
     font-size: 0.95rem;
 }
 
-/* Content Sections */
-.content-section {
-    padding: 64px 0;
+/* Page Content (for individual pages) */
+.page-content {
+    padding-top: 64px;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.page-header {
+    background-color: white;
     border-bottom: 1px solid #e5e5e5;
+    padding: 3rem 0;
 }
 
-.content-section:last-of-type {
-    border-bottom: none;
-}
-
-.section-title {
-    font-size: 2.5rem;
+.page-title {
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    color: #1a1a1a;
     text-align: center;
+}
+
+.page-body {
+    padding: 3rem 0;
+}
+
+/* Content styles for individual pages */
+.bio-content,
+.publications-content,
+.presentations-content,
+.news-content,
+.experience-content,
+.projects-content,
+.teaching-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bio-content h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
     color: #1a1a1a;
 }
 
-.section-content {
-    max-width: 800px;
-    margin: 0 auto;
+.bio-content h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.interests-list {
+    margin-left: 0;
+    list-style: none;
+}
+
+.interests-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.interests-list li:before {
+    content: "▸";
+    color: #0D4F3C;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.service-section,
+.awards-section {
+    margin-top: 2rem;
+}
+
+.award-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.award-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.award-year {
+    font-weight: 600;
+    color: #0D4F3C;
+    text-align: right;
+}
+
+.award-details h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
 }
 
 /* Publication Items */
@@ -463,6 +571,7 @@ li {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .pub-link {
@@ -537,29 +646,20 @@ li {
     text-align: right;
 }
 
-.news-content {
+.news-content-text {
     color: #666;
-}
-
-/* Footer */
-.footer {
-    background-color: #f8f8f8;
-    padding: 2rem 0;
-    text-align: center;
-    color: #666;
-    font-size: 0.875rem;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    .container {
+    .content-container {
         padding: 0 1rem;
     }
-
+    
     .nav-container {
         padding: 0 1rem;
     }
-
+    
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -574,67 +674,77 @@ li {
         padding: 2rem 0;
         gap: 0;
     }
-
+    
     .nav-menu.active {
         left: 0;
     }
-
+    
     .nav-item {
         margin: 1rem 0;
     }
-
+    
     .nav-toggle {
         display: flex;
     }
-
+    
     .nav-toggle.active .nav-toggle-bar:nth-child(2) {
         opacity: 0;
     }
-
+    
     .nav-toggle.active .nav-toggle-bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-
+    
     .nav-toggle.active .nav-toggle-bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .profile-section {
+    /* Main content mobile */
+    .content-container {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 2rem 1rem;
         text-align: center;
     }
-
-    .profile-info {
-        align-items: center;
-        text-align: center;
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
     }
-
-    .hero-name {
-        font-size: 2.5rem;
+    
+    .profile-name {
+        font-size: 2rem;
     }
-
-    .hero-name-chinese {
-        font-size: 1.5rem;
-    }
-
-    .hero-title {
+    
+    .profile-name-chinese {
         font-size: 1.25rem;
     }
-
+    
+    .content-title {
+        font-size: 2rem;
+    }
+    
     .info-sections {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .hero-links {
-        justify-content: center;
+    /* Page content mobile */
+    .bio-content,
+    .publications-content,
+    .presentations-content,
+    .news-content,
+    .experience-content,
+    .projects-content,
+    .teaching-content {
+        padding: 2rem 1rem;
+        margin: 0 1rem;
     }
-
-    .section-title {
+    
+    .page-title {
         font-size: 2rem;
     }
-
+    
     .publication-item,
     .presentation-item,
     .teaching-item,
@@ -642,7 +752,7 @@ li {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-
+    
     .publication-year,
     .presentation-year,
     .teaching-year,
@@ -650,69 +760,48 @@ li {
         text-align: left;
         font-size: 0.875rem;
     }
-
+    
     .news-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
-
+    
     .news-date {
         text-align: left;
     }
 
-    .publication-links,
-    .presentation-links,
-    .project-links {
-        flex-wrap: wrap;
+    .award-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
     }
 
-    .hero-links {
-        gap: 1rem;
-    }
-
-    .contact-link {
-        width: 40px;
-        height: 40px;
+    .award-year {
+        text-align: left;
+        font-size: 0.875rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-section {
-        padding: 96px 0 48px;
+    .content-container {
+        padding: 1rem;
     }
-
-    .content-section {
-        padding: 48px 0;
-    }
-
-    .hero-name {
-        font-size: 2rem;
-    }
-
-    .hero-name-chinese {
-        font-size: 1.25rem;
-    }
-
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .about-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-section p {
-        font-size: 1rem;
-    }
-
-    .section-title {
+    
+    .profile-name {
         font-size: 1.75rem;
-        margin-bottom: 2rem;
     }
-
-    .cv-download-btn {
-        padding: 10px 24px;
-        font-size: 0.875rem;
+    
+    .content-title {
+        font-size: 1.75rem;
+    }
+    
+    .bio-content,
+    .publications-content,
+    .presentations-content,
+    .news-content,
+    .experience-content,
+    .projects-content,
+    .teaching-content {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
     }
 }
