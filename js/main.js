@@ -1,5 +1,5 @@
 // Mobile menu toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -7,23 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Only proceed if elements exist (for multi-page compatibility)
     if (navToggle && navMenu) {
         // Toggle mobile menu
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
 
         // Close mobile menu when clicking on a nav link
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
             });
         });
 
         // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
-            
+
             if (!isClickInsideNav && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
@@ -35,16 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function setActiveNavLink() {
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(function(link) {
+
+        navLinks.forEach(function (link) {
             link.classList.remove('active');
-            
+
             // Get the href attribute and extract the filename
             const linkHref = link.getAttribute('href');
             const linkPage = linkHref ? linkHref.split('/').pop() : '';
-            
+
             // Set active for exact matches or for index page when on root
-            if (linkPage === currentPage || 
+            if (linkPage === currentPage ||
                 (currentPage === 'index.html' && linkHref === 'index.html') ||
                 (currentPage === '' && linkHref === 'index.html')) {
                 link.classList.add('active');
@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle navigation action buttons (search and dark mode)
     const actionButtons = document.querySelectorAll('.nav-action-btn');
-    
-    actionButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
+
+    actionButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
             const ariaLabel = this.getAttribute('aria-label');
-            
+
             if (ariaLabel === 'Search') {
                 // Placeholder for search functionality
                 console.log('Search functionality would be implemented here');
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Simple dark mode toggle (placeholder implementation)
     function toggleDarkMode() {
         document.body.classList.toggle('dark-mode');
-        
+
         // Store preference in localStorage
         const isDarkMode = document.body.classList.contains('dark-mode');
         localStorage.setItem('darkMode', isDarkMode);
@@ -95,17 +95,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scrolling for any internal anchor links (if they exist on single pages)
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    
-    anchorLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
+
+    anchorLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar height
-                
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -117,14 +117,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add loading state management for page transitions
     function addLoadingStateToLinks() {
         const pageLinks = document.querySelectorAll('a[href$=".html"]');
-        
-        pageLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
+
+        pageLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
                 // Add a small loading indicator (optional)
                 document.body.style.cursor = 'wait';
-                
+
                 // Reset cursor after a short delay (in case navigation is instant)
-                setTimeout(function() {
+                setTimeout(function () {
                     document.body.style.cursor = 'default';
                 }, 500);
             });
@@ -137,56 +137,58 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle profile audio icon click (placeholder)
     const profileAudioIcon = document.querySelector('.profile-audio-icon');
     if (profileAudioIcon) {
-        profileAudioIcon.addEventListener('click', function() {
+        profileAudioIcon.addEventListener('click', function () {
             console.log('Profile audio functionality would be implemented here');
             // You could implement actual audio playbook here
         });
     }
 
-    // Abstract functionality for publications page
+    // Abstract functionality for publications and projects pages
     function initializeAbstractFunctionality() {
         const abstractButtons = document.querySelectorAll('.abstract-btn');
         const clickableTitles = document.querySelectorAll('.clickable-title');
-        
+
         // Handle abstract button clicks
-        abstractButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
+        abstractButtons.forEach(function (button) {
+            button.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default link behavior
                 const abstractId = this.getAttribute('data-abstract');
                 toggleAbstract(abstractId);
             });
         });
-        
+
         // Handle clickable title clicks
-        clickableTitles.forEach(function(title) {
-            title.addEventListener('click', function() {
+        clickableTitles.forEach(function (title) {
+            title.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default behavior
                 const abstractId = this.getAttribute('data-abstract');
                 toggleAbstract(abstractId);
             });
         });
     }
-    
+
     function toggleAbstract(abstractId) {
         const abstractContainer = document.getElementById('abstract-' + abstractId);
-        
+
         if (!abstractContainer) {
             console.warn('Abstract container not found for ID:', abstractId);
             return;
         }
-        
+
         // Close all other open abstracts first
         const allAbstracts = document.querySelectorAll('.abstract-container');
-        allAbstracts.forEach(function(container) {
+        allAbstracts.forEach(function (container) {
             if (container.id !== 'abstract-' + abstractId) {
                 container.classList.remove('active');
             }
         });
-        
+
         // Toggle the clicked abstract
         abstractContainer.classList.toggle('active');
-        
+
         // Scroll to the abstract if it's being opened
         if (abstractContainer.classList.contains('active')) {
-            setTimeout(function() {
+            setTimeout(function () {
                 const offsetTop = abstractContainer.offsetTop - 100; // Account for navbar
                 window.scrollTo({
                     top: offsetTop,
@@ -195,10 +197,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150); // Small delay to allow for animation
         }
     }
-    
-    // Initialize abstract functionality if we're on the publications page
-    if (window.location.pathname.includes('publications.html') || 
-        document.querySelector('.publications-content')) {
+
+    // Initialize abstract functionality if we're on pages that use it
+    if (window.location.pathname.includes('publications.html') ||
+        window.location.pathname.includes('projects.html') ||
+        document.querySelector('.publications-content') ||
+        document.querySelector('.projects-content')) {
         initializeAbstractFunctionality();
     }
 });
+
+// Download slides functionality for teaching page
+function downloadSlides(filename) {
+    // Create a temporary link element for download
+    const link = document.createElement('a');
+    link.href = `../assets/lectures/${filename}`;
+    link.download = filename;
+    link.style.display = 'none';
+
+    // Add to DOM temporarily
+    document.body.appendChild(link);
+
+    // Trigger download
+    link.click();
+
+    // Clean up
+    document.body.removeChild(link);
+
+    // Optional: Show feedback to user
+    console.log(`Downloading: ${filename}`);
+}
