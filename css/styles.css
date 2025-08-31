@@ -88,9 +88,9 @@ li {
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 64px;
+    position: relative;
 }
 
 .nav-brand {
@@ -98,6 +98,7 @@ li {
     font-weight: 600;
     color: #1a1a1a;
     text-decoration: none;
+    flex-shrink: 0;
 }
 
 .nav-brand:hover {
@@ -109,7 +110,12 @@ li {
     display: flex;
     list-style: none;
     margin: 0;
-    gap: 2rem;
+    gap: 1.5rem;
+    position: absolute;
+    left: 65%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
