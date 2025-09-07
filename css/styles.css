@@ -330,7 +330,7 @@ li {
 }
 
 .contact-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: white;
@@ -364,8 +364,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
@@ -383,8 +383,8 @@ li {
 }
 
 .contact-icon-link svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 }
 
 .content-area {
@@ -1155,4 +1155,47 @@ li {
 
 .dark-mode .download-btn:hover {
     background-color: #5a8c69;
+}
+
+/* Contact section two-column layout */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.contact-left {}
+
+.contact-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Download button styling for dark background */
+.contact-right .abstract-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contact-right .abstract-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    color: white;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .contact-right {
+        align-self: flex-start;
+    }
 }
