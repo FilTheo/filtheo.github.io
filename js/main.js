@@ -151,8 +151,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Handle abstract button clicks
         abstractButtons.forEach(function (button) {
             button.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent default link behavior
                 const abstractId = this.getAttribute('data-abstract');
+                if (!abstractId) {
+                    return;
+                }
+
+                e.preventDefault(); // Prevent default link behavior only for abstract toggles
                 toggleAbstract(abstractId);
             });
         });
