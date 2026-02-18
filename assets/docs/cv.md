@@ -8,12 +8,12 @@ Research Group of Predictive AI and Digital Shift
 ---
 
 ## Summary
-Senior applied researcher and lecturer specializing in ML-based time series forecasting for complex business settings. Member of the International Institute of Forecasters (IIF) and the Early Career Forecasters (ECF). Delivers end-to-end forecasting systems (design, modeling, MLOps, deployment), maintains active research, and contributes to open-source. Regular presenter at forecasting conferences. Delivers talks on modern AI, with a critical focus on LLM capabilities and limitations.
+Senior applied researcher and lecturer specializing in ML-based time series forecasting for complex business settings. Member of the International Institute of Forecasters (IIF) and the Early Career Forecasters (ECF). Designs and deploys end-to-end forecasting systems, from scoping and data pipelines to modeling, MLOps, and decision-support delivery. Maintains active research and contributes to open-source. Regular presenter at forecasting conferences, with a critical focus on practical AI/LLM capabilities and limitations.
 
 ## Core Skills
 - **Problem-Solving**: Scoping, solution architecture, stakeholder alignment, clear communication
-- **Forecasting**: Large Scale Operational Forecasting, Global models, hierarchical reconciliation, uncertainty estimation, interpretable ML
-- **Tech**: Advanced Python; fluent in R; MLOps; AWS
+- **Forecasting**: Large Scale Operational Forecasting, Global models, hierarchical reconciliation, uncertainty estimation, Gradient Boosted Decision Trees, 
+- **Tech**: Advanced Python; fluent in R; ML expertise; MLOps; AWS; Google Cloude
 - **AI Tools**: Deep understanding of LLM tooling (text/coding), experience with agentic AI apps
 
 ## Education
@@ -22,13 +22,16 @@ Senior applied researcher and lecturer specializing in ML-based time series fore
 
 ## Selected Projects
 **Food Waste Reduction via Enhanced Demand Forecasting (2024–Present)**  
-Designed/deployed ML forecasting for ready-to-eat sector partners; AWS production system with ongoing monitoring; Over 67% waste reduction. Presented at ISF 2025.
+Designed and deployed forecasting systems for ready-to-eat sector partners; delivered 13%-133% forecasting accuracy improvements across five partners, up to 67% food-waste reduction per meal, and 4%-20% estimated operational cost reductions. Presented at ISF 2025.
+
+**End-to-End Forecasting System: Architecture and Deployment (2025–Present)**  
+Designed an event-driven forecasting platform covering data pipelines, forecasting, probabilistic decision support, and optimization workflows; currently migrating components toward on-premise architecture to ensure continued client support.
 
 **Sales Forecasting for SMEs with Limited Data (2022–2024)**  
 Global modeling plus hierarchical reconciliation to overcome data scarcity of SMEs; 40% Accuracy Improvement over previous approaches. Presented at ISF 2024.
 
 **AI Education: Early Risk Detection and Interventions (2022–2024)**  
-Early risk detection for students based on online activity; SHAP-based interventions for styding adjustments; Presented at ISF 2023.
+Early risk detection for students based on online activity; SHAP-based interventions for study adjustments; Presented at ISF 2023.
 
 ## Open Source
 - **DeepRetail**: Forecasting package with reconciliation methods — [GitHub](https://github.com/yForecasting/DeepRetail)
