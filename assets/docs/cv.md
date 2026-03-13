@@ -13,8 +13,8 @@ Senior applied researcher and lecturer specializing in ML-based time series fore
 ## Core Skills
 - **Problem-Solving**: Scoping, solution architecture, stakeholder alignment, clear communication
 - **Forecasting**: Large Scale Operational Forecasting, Global models, hierarchical reconciliation, uncertainty estimation, Gradient Boosted Decision Trees, 
-- **Tech**: Advanced Python; fluent in R; ML expertise; MLOps; AWS; Google Cloude
-- **AI Tools**: Deep understanding of LLM tooling (text/coding), experience with agentic AI apps
+- **Tech**: Advanced Python; fluent in R; ML expertise; MLOps; AWS; Google Cloud
+- **AI Tools**: Deep understanding of LLM tooling (text/coding), experience with agentic AI app
 
 ## Education
 - **BSc, Mathematics** — Aristotle University of Thessaloniki
