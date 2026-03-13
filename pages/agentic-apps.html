@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Application - Filotas Theodosiou</title>
+    <meta name="description" content="Agentic AI applications by Filotas Theodosiou">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand">Filotas Theodosiou</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="bio.html" class="nav-link">Bio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="agentic-apps.html" class="nav-link active">Agentic Application</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">Past Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="publications.html" class="nav-link">Research Work</a>
+                </li>
+                <li class="nav-item">
+                    <a href="presentations.html" class="nav-link">Presentations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="teaching.html" class="nav-link">Teaching</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">Open Source</a>
+                </li>
+                <li class="nav-item">
+                    <a href="articles.html" class="nav-link">Articles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="content-container">
+            <div class="page-header">
+                <h1 class="page-title">Agentic Application</h1>
+            </div>
+
+            <div class="page-body">
+                <div class="projects-content">
+                    
+                    <div class="intro-note">
+                        <p>The following are private applications. Demo available upon request.</p>
+                    </div>
+
+                    <!-- Application 1: Hospitality AI API -->
+                    <div class="project-item">
+                        <div class="project-details">
+                            <h3 class="project-title clickable-title" data-abstract="hospitality-ai">
+                                Hospitality AI API
+                                <span class="click-hint">(click for details)</span>
+                            </h3>
+                            <p class="project-description">AI-powered Q&A generation and operational manual automation</p>
+                            <div class="abstract-container" id="abstract-hospitality-ai">
+                                <div class="abstract-content">
+                                    <p><strong>What it does:</strong> A FastAPI backend system that automates the creation of Q&A content and operational manuals for hospitality businesses. The system processes raw operational documents and transforms them into structured, queryable knowledge bases that power AI assistants.</p>
+                                    <p><strong>The Agentic Part:</strong> The system implements autonomous AI agents that perform two core functions: (1) <strong>Q&A Generation Agent</strong> - analyzes operational documents, policies, and procedures to automatically generate comprehensive question-answer pairs covering common guest inquiries, staff procedures, and edge cases. This agent identifies key information points and creates diverse, well-structured Q&A content. (2) <strong>Manual Generation Agent</strong> - transforms raw documentation into formatted, contextually aware manuals. The agent understands document structure, extracts relevant sections, and generates coherent procedural guides that can be delivered in multiple formats (Markdown, HTML, PDF).</p>
+                                    <p><strong>Key Capabilities:</strong> Automatic extraction of Q&A pairs from unstructured documents, intelligent manual structuring and formatting, context-aware content generation that maintains consistency across generated materials, stateful conversation support for deployed assistants, and API-driven access for seamless integration with existing hospitality systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application 2: DJ35 Roster Optimizer -->
+                    <div class="project-item">
+                        <div class="project-details">
+                            <h3 class="project-title clickable-title" data-abstract="dj35">
+                                DJ35 Roster Optimizer
+                                <span class="click-hint">(click for details)</span>
+                            </h3>
+                            <p class="project-description">AI-powered scheduling with multi-stage constraint optimization</p>
+                            <div class="abstract-container" id="abstract-dj35">
+                                <div class="abstract-content">
+                                    <p><strong>What it does:</strong> An intelligent scheduling system that automates the creation of monthly DJ rosters by processing natural language availability, applying complex business constraints, and optimizing assignments to minimize conflicts while maximizing coverage and preferences.</p>
+                                    <p><strong>The Agentic Part:</strong> The system employs a pipeline of specialized AI agents: (1) <strong>Extraction Agent</strong> - parses free-form text from DJs describing their availability (e.g., "I'm free all weekends except the 15th, and weekday evenings") and structures this into machine-readable availability data. (2) <strong>Optimization Agent</strong> - applies constraint-based reasoning to generate conflict-free schedules, balancing multiple objectives like fair distribution, skill matching, and preference satisfaction. This agent handles the combinatorial complexity of assigning multiple DJs to multiple dates while respecting all constraints. (3) <strong>Verification Agent</strong> - validates proposed assignments against business rules, identifies potential conflicts, and generates scenario comparisons showing the trade-offs between different scheduling options to support human decision-making.</p>
+                                    <p><strong>Key Capabilities:</strong> Natural language availability parsing, multi-objective constraint optimization, interactive schedule preview and editing, automated conflict detection and resolution, scenario-based decision support for human oversight, and drag-and-drop roster management for manual adjustments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application 3: Chatbot Council -->
+                    <div class="project-item">
+                        <div class="project-details">
+                            <h3 class="project-title clickable-title" data-abstract="chatbot-council">
+                                Chatbot Council
+                                <span class="click-hint">(click for details)</span>
+                            </h3>
+                            <p class="project-description">Multi-agent deliberation system for enhanced reasoning</p>
+                            <div class="abstract-container" id="abstract-chatbot-council">
+                                <div class="abstract-content">
+                                    <p><strong>What it does:</strong> A sophisticated multi-agent system where multiple AI models collaborate to answer complex questions through structured deliberation. Unlike single-LLM responses, this system leverages collective intelligence by having diverse agents reason, debate, and refine answers together. Users can select which open-source models to include in the council, customizing the expertise and perspectives brought to each deliberation.</p>
+                                    <p><strong>The Agentic Part:</strong> Each AI agent operates as an independent "council member" with distinct reasoning styles and areas of expertise. The system orchestrates a multi-round deliberation process where: (1) agents independently analyze the question and propose answers, (2) agents vote on each other's responses, (3) an arbiter agent evaluates the arguments and eliminates weaker perspectives, and (4) surviving agents refine their answers based on the deliberation. This process continues until a final synthesized answer emerges from the strongest perspectives. Users have full control over which models participate, allowing them to tailor the council's capabilities to specific domains or use cases.</p>
+                                    <p><strong>Key Capabilities:</strong> Configurable model selection from open-source providers, parallel independent reasoning, peer review and voting, arbiter-driven elimination of weak arguments, iterative refinement through multiple rounds, ensemble synthesis of final answer, and real-time streaming of the entire deliberation process so users can watch the AI "think" together.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
