@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load preference on page load
     loadDarkModePreference();
 
-    // Smooth scrolling for any internal anchor links (if they exist on single pages)
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    // Smooth scrolling for internal anchor links, excluding UI controls that handle state locally
+    const anchorLinks = document.querySelectorAll('a[href^="#"]:not(.teaching-tab):not(.teaching-nav-card)');
 
     anchorLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
@@ -202,12 +202,62 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function closeAllAbstracts() {
+        const allAbstracts = document.querySelectorAll('.abstract-container');
+        allAbstracts.forEach(function (container) {
+            container.classList.remove('active');
+        });
+    }
+
+    function initializeTeachingTabs() {
+        const tabs = document.querySelectorAll('.teaching-tab');
+        const panels = document.querySelectorAll('.teaching-panel');
+
+        if (!tabs.length || !panels.length) {
+            return;
+        }
+
+        function activateTab(targetId) {
+            tabs.forEach(function (tab) {
+                const isActive = tab.getAttribute('data-tab-target') === targetId;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            panels.forEach(function (panel) {
+                const isActive = panel.id === targetId;
+                panel.classList.toggle('active', isActive);
+                panel.hidden = !isActive;
+            });
+
+            closeAllAbstracts();
+        }
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-tab-target');
+                if (targetId) {
+                    activateTab(targetId);
+                }
+            });
+        });
+
+        activateTab('supervised-work-panel');
+    }
+
     // Initialize abstract functionality if we're on pages that use it
     if (window.location.pathname.includes('publications.html') ||
         window.location.pathname.includes('projects.html') ||
+        window.location.pathname.includes('teaching.html') ||
         document.querySelector('.publications-content') ||
-        document.querySelector('.projects-content')) {
+        document.querySelector('.projects-content') ||
+        document.querySelector('.supervision-projects')) {
         initializeAbstractFunctionality();
+    }
+
+    if (window.location.pathname.includes('teaching.html') ||
+        document.querySelector('.teaching-tabs')) {
+        initializeTeachingTabs();
     }
 });
 

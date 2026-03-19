@@ -66,138 +66,300 @@
                             <h3 class="teaching-course">Cloud for AI</h3>
                             <p class="teaching-role"></p>
                             <div class="course-overview">
-                                <p class="teaching-description">The Cloud for AI course provides a comprehensive guide
-                                    to the Machine Learning Operations (MLOps) lifecycle, focusing on the practical
-                                    challenges of building, deploying, and maintaining reliable ML systems in a
-                                    production environment. It covers the entire process, from initial project scoping
-                                    and data strategy to modeling, deployment, and ongoing monitoring.</p>
+                                <p class="teaching-description teaching-highlight">Filotas's teaching combines
+                                    lecture-based instruction in MLOps and applied machine learning with direct
+                                    supervision of end-to-end student and thesis work. In Cloud for AI, he teaches the
+                                    lifecycle of production-oriented ML systems while providing technical supervision across
+                                    scoping, modeling, evaluation, and deployment planning. Students are expected to
+                                    translate open-ended business problems into credible ML products, with attention to
+                                    feasibility, system design, and real engineering trade-offs.</p>
 
-                                <p class="teaching-description">The curriculum emphasizes the engineering mindset
-                                    required for robust systems, exploring core concepts such as data leakage, concept
-                                    drift, online versus batch predictions, and cloud versus edge serving strategies. A
-                                    key focus is placed on establishing strong baseline models, selecting appropriate
-                                    business and serving metrics, and starting simple before incrementally increasing
-                                    model complexity.</p>
+                                <p class="teaching-description teaching-highlight-secondary">In addition to course
+                                    supervision, he also guides master thesis work focused on end-to-end ML products
+                                    and stable deployment architectures for applied research settings, including
+                                    platform transition and support considerations.</p>
 
-                                <p class="teaching-description">The course is hands-on, culminating in a final
-                                    assignment where students must deliver an end-to-end product. This practical work is
-                                    supplemented by open-ended questionnaires designed to foster the critical thinking
-                                    needed to navigate the real-world trade-offs inherent in ML system design.</p>
+                                <div class="teaching-tabs" role="tablist" aria-label="Teaching content">
+                                    <button class="teaching-tab active" id="selected-supervised-work-tab"
+                                        type="button" role="tab" aria-selected="true"
+                                        aria-controls="supervised-work-panel" data-tab-target="supervised-work-panel">
+                                        <span class="teaching-tab-label">Selected Supervised Work</span>
+                                        <span class="teaching-tab-text">Open representative student projects I guided
+                                            from idea to technical delivery.</span>
+                                    </button>
+                                    <button class="teaching-tab" id="lecture-material-tab" type="button" role="tab"
+                                        aria-selected="false" aria-controls="lecture-material-panel"
+                                        data-tab-target="lecture-material-panel">
+                                        <span class="teaching-tab-label">Lecture Material</span>
+                                        <span class="teaching-tab-text">Browse the course topics and download the
+                                            slides.</span>
+                                    </button>
+                                </div>
 
-                                <div class="course-content">
-                                    <h4>Course Content & Lectures:</h4>
-                                    <div class="lectures-grid">
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Hello World</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI Course 1 -U (2).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
+                                <div class="teaching-panels">
+                                    <section class="teaching-panel active" id="supervised-work-panel" role="tabpanel"
+                                        aria-labelledby="selected-supervised-work-tab">
+                                        <div class="supervision-section">
+                                            <h4 class="supervision-title">Supervised End-to-End Student Projects</h4>
+                                            <p class="supervision-intro">Selected individual projects from the course
+                                                are shown below. These examples demonstrate technical supervision across
+                                                scoping, modeling, evaluation, and deployment planning.</p>
+
+                                            <div class="supervision-projects">
+                                                <div class="supervision-project-item">
+                                                    <h5 class="supervision-project-title clickable-title"
+                                                        data-abstract="adaptive-math-project">
+                                                        Adaptive Math Practice for Primary School Students
+                                                        <span class="click-hint">(click for details)</span>
+                                                    </h5>
+                                                    <div class="abstract-container" id="abstract-adaptive-math-project">
+                                                        <div class="abstract-content">
+                                                            <p><strong>Student build:</strong> Scoped an adaptive-learning ML
+                                                                system using student exercise data, trained and compared
+                                                                classifiers, designed rules for dynamic difficulty adjustment,
+                                                                and specified a FastAPI endpoint, Docker container, and Cloud
+                                                                Run deployment.</p>
+                                                            <p><strong>My supervision:</strong> Guided project scoping,
+                                                                reviewed model selection and evaluation choices, and assessed
+                                                                deployment trade-offs around latency and cost.</p>
+                                                            <p><strong>Outcome:</strong> Strongest implementation evidence in
+                                                                the set, including a referenced GitHub repository and a
+                                                                containerized prototype with reported low-latency inference.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="supervision-project-item">
+                                                    <h5 class="supervision-project-title clickable-title"
+                                                        data-abstract="github-productivity-project">
+                                                        Predicting Team Productivity in GitHub Projects
+                                                        <span class="click-hint">(click for details)</span>
+                                                    </h5>
+                                                    <div class="abstract-container"
+                                                        id="abstract-github-productivity-project">
+                                                        <div class="abstract-content">
+                                                            <p><strong>Student build:</strong> Designed an end-to-end workflow
+                                                                using GitHub activity data to classify project-team
+                                                                productivity and flag low-productivity trends for managers.</p>
+                                                            <p><strong>My supervision:</strong> Supervised problem definition,
+                                                                feature engineering strategy, and evaluation choices such as
+                                                                Accuracy and F1-score.</p>
+                                                            <p><strong>Outcome:</strong> Educational end-to-end prototype with
+                                                                management-oriented benchmarking, best presented as supervised
+                                                                development rather than confirmed production deployment.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="supervision-project-item">
+                                                    <h5 class="supervision-project-title clickable-title"
+                                                        data-abstract="support-qa-project">
+                                                        LLM-Based Support Case Review Assistant
+                                                        <span class="click-hint">(click for details)</span>
+                                                    </h5>
+                                                    <div class="abstract-container" id="abstract-support-qa-project">
+                                                        <div class="abstract-content">
+                                                            <p><strong>Student build:</strong> Designed a rubric-based QA
+                                                                assistant that ingests support case logs, generates structured
+                                                                JSON scorecards, and keeps a human reviewer in the loop before
+                                                                finalization.</p>
+                                                            <p><strong>My supervision:</strong> Reviewed feasibility, prompt
+                                                                design, risk controls, and human-in-the-loop integration for
+                                                                applied GenAI operations.</p>
+                                                            <p><strong>Outcome:</strong> Pilot-oriented prototype design with a
+                                                                measurable reviewer-time reduction target, presented as
+                                                                deployment planning rather than live deployment.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="supervision-project-item">
+                                                    <h5 class="supervision-project-title clickable-title"
+                                                        data-abstract="bird-app-project">
+                                                        Bird Identification and Information App
+                                                        <span class="click-hint">(click for details)</span>
+                                                    </h5>
+                                                    <div class="abstract-container" id="abstract-bird-app-project">
+                                                        <div class="abstract-content">
+                                                            <p><strong>Student build:</strong> Proposed a computer-vision
+                                                                application where users upload bird photos, a cloud-hosted
+                                                                model predicts species, and a backend returns structured
+                                                                species information.</p>
+                                                            <p><strong>My supervision:</strong> Guided business framing,
+                                                                feasibility assessment, API-versus-custom-model decisions, and
+                                                                latency versus accuracy trade-offs.</p>
+                                                            <p><strong>Outcome:</strong> Strong cloud-application design with
+                                                                production-oriented systems thinking.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="supervision-project-item">
+                                                    <h5 class="supervision-project-title clickable-title"
+                                                        data-abstract="music-recommendation-project">
+                                                        Music Recommendation System for Streaming Platforms
+                                                        <span class="click-hint">(click for details)</span>
+                                                    </h5>
+                                                    <div class="abstract-container" id="abstract-music-recommendation-project">
+                                                        <div class="abstract-content">
+                                                            <p><strong>Student build:</strong> Framed a recommender system
+                                                                using clustering methods to group songs and generate
+                                                                personalized recommendations tied to retention and churn goals.</p>
+                                                            <p><strong>My supervision:</strong> Supervised business problem
+                                                                scoping, evaluation metrics, and ethical reflection around
+                                                                personalization and user wellbeing.</p>
+                                                            <p><strong>Outcome:</strong> Applied recommender-systems project
+                                                                with clear business and ML evaluation framing.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="supervision-project-item">
+                                                    <h5 class="supervision-project-title clickable-title"
+                                                        data-abstract="ev-charging-project">
+                                                        EV Charging Station Demand and Placement Prediction
+                                                        <span class="click-hint">(click for details)</span>
+                                                    </h5>
+                                                    <div class="abstract-container" id="abstract-ev-charging-project">
+                                                        <div class="abstract-content">
+                                                            <p><strong>Student build:</strong> Scoped an ML system to predict
+                                                                EV charging behavior and support charging-station placement
+                                                                through both a consumer-facing app and business dashboard.</p>
+                                                            <p><strong>My supervision:</strong> Guided the conversion of a
+                                                                societal and business problem into an ML product, including
+                                                                interface design, deployment thinking, and metric trade-offs.</p>
+                                                            <p><strong>Outcome:</strong> Dual-interface product design and
+                                                                deployment planning for a realistic infrastructure use case.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Introduction to MLOps</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI Course 2 - U  (1).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
+                                    </section>
+
+                                    <section class="teaching-panel" id="lecture-material-panel" role="tabpanel"
+                                        aria-labelledby="lecture-material-tab" hidden>
+                                        <div class="course-content">
+                                            <h4>Course Content & Lectures:</h4>
+                                            <p class="teaching-description">The lecture material covers the practical MLOps
+                                                lifecycle, from project scoping and data strategy to modeling, deployment,
+                                                serving constraints, and monitoring. The emphasis is on engineering judgment:
+                                                building strong baselines, choosing useful business and ML metrics, and making
+                                                realistic production decisions.</p>
+                                            <div class="lectures-grid">
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Hello World</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI Course 1 -U (2).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Introduction to MLOps</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI Course 2 - U  (1).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Scoping</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI_ Course 3 - U (1).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Introduction to Modelling</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI_ Lecture 4 -U (2).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Modelling Part 2</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI_ Course 5 -U (2).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Production Level Code</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI_ Course 6 -U (2).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Example Session!</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI - Example.pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Introduction to Deployment</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI_ Course 7 -U (2).pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Deployment Technologies</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI_ Course 9 -U.pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Cloud Platforms 1</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI Course 10.pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                                <div class="lecture-item">
+                                                    <span class="lecture-title">Cloud Platforms 2</span>
+                                                    <button class="download-btn"
+                                                        onclick="downloadSlides('Cloud for AI Lecture 11 -U.pptx')">
+                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                            <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                                        </svg>
+                                                        Slides
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Scoping</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI_ Course 3 - U (1).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Introduction to Modelling</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI_ Lecture 4 -U (2).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Modelling Part 2</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI_ Course 5 -U (2).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Production Level Code</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI_ Course 6 -U (2).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Example Session!</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI - Example.pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Introduction to Deployment</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI_ Course 7 -U (2).pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Deployment Technologies</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI_ Course 9 -U.pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Cloud Platforms 1</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI Course 10.pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                        <div class="lecture-item">
-                                            <span class="lecture-title">Cloud Platforms 2</span>
-                                            <button class="download-btn"
-                                                onclick="downloadSlides('Cloud for AI Lecture 11 -U.pptx')">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
-                                                </svg>
-                                                Slides
-                                            </button>
-                                        </div>
-                                    </div>
+                                    </section>
                                 </div>
                             </div>
                         </div>

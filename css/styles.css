@@ -780,6 +780,110 @@ li {
     color: #1a1a1a;
 }
 
+.teaching-highlight {
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.teaching-highlight-secondary {
+    font-size: 1.05rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.teaching-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.75rem 0 2rem;
+}
+
+.teaching-tab {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid #d8e8e2;
+    border-radius: 10px;
+    background-color: #f7fbf9;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.teaching-tab:hover {
+    transform: translateY(-2px);
+    border-color: #0D4F3C;
+    background-color: #eef7f2;
+}
+
+.teaching-tab.active {
+    border-color: #0D4F3C;
+    background-color: #eef7f2;
+    box-shadow: inset 0 0 0 1px rgba(13, 79, 60, 0.08);
+}
+
+.teaching-tab-label {
+    display: block;
+    font-weight: 600;
+    color: #0D4F3C;
+    margin-bottom: 0.35rem;
+}
+
+.teaching-tab-text {
+    display: block;
+    color: #555;
+    line-height: 1.5;
+}
+
+.teaching-panels {
+    margin-top: 1rem;
+}
+
+.teaching-panel {
+    display: none;
+}
+
+.teaching-panel.active {
+    display: block;
+}
+
+.supervision-section {
+    padding: 1.5rem;
+    border: 1px solid #d8e8e2;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #f7fbf9 0%, #ffffff 100%);
+}
+
+.supervision-title {
+    font-size: 1.3rem;
+    color: #0D4F3C;
+    margin-bottom: 0.5rem;
+}
+
+.supervision-intro {
+    color: #666;
+    margin-bottom: 1.25rem;
+}
+
+.supervision-projects {
+    display: grid;
+    gap: 1rem;
+}
+
+.supervision-project-item {
+    padding: 1rem 1.25rem;
+    border: 1px solid #e8eceb;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.supervision-project-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1a1a1a;
+}
+
 /* Disabled link styling */
 .pub-link.disabled {
     color: #999;
@@ -1168,6 +1272,10 @@ li {
 
 .course-content {
     margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    background-color: #fbfcfc;
 }
 
 .course-content h4 {
@@ -1220,6 +1328,12 @@ li {
     font-size: 0.875rem;
     font-weight: 500;
     transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+@media (max-width: 768px) {
+    .teaching-tabs {
+        grid-template-columns: 1fr;
+    }
 }
 
 .download-btn:hover {

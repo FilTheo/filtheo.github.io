@@ -8,10 +8,10 @@ Research Group of Predictive AI and Digital Shift
 ---
 
 ## Summary
-Senior applied researcher and lecturer specializing in ML-based time series forecasting for complex business settings. Member of the International Institute of Forecasters (IIF) and the Early Career Forecasters (ECF). Designs and deploys end-to-end forecasting systems, from scoping and data pipelines to modeling, MLOps, and decision-support delivery. Maintains active research and contributes to open-source. Regular presenter at forecasting conferences, with a critical focus on practical AI/LLM capabilities and limitations.
+Senior applied researcher and lecturer specializing in ML-based time series forecasting for complex business settings. Member of the International Institute of Forecasters (IIF) and the Early Career Forecasters (ECF). Designs and deploys end-to-end forecasting systems, from scoping and data pipelines to modeling, MLOps, and decision-support delivery. In parallel, leads supervised student ML/MLOps projects and thesis work on production-oriented ML systems, guiding teams from problem framing through evaluation and deployment planning. Maintains active research and contributes to open-source. Regular presenter at forecasting conferences, with a critical focus on practical AI/LLM capabilities and limitations.
 
 ## Core Skills
-- **Problem-Solving**: Scoping, solution architecture, stakeholder alignment, clear communication
+- **Problem-Solving**: Scoping, solution architecture, stakeholder alignment, technical supervision, clear communication
 - **Forecasting**: Large Scale Operational Forecasting, Global models, hierarchical reconciliation, uncertainty estimation, Gradient Boosted Decision Trees, 
 - **Tech**: Advanced Python; fluent in R; ML expertise; MLOps; AWS; Google Cloud
 - **AI Tools**: Deep understanding of LLM tooling (text/coding), experience with agentic AI app
@@ -59,6 +59,7 @@ Early risk detection for students based on online activity; SHAP-based intervent
 - **2021** — Forecasting with Deep Temporal Hierarchies (ISF 2021; Research Seminar; ICAIF 2021)
 
 ## Teaching
-- **2023–Present** — Course: Cloud for AI (MLOps) — VIVES University of Applied Sciences
+- **2023–Present** — Course: Cloud for AI (MLOps) — VIVES University of Applied Sciences. Supervise bachelor-level end-to-end ML/MLOps projects covering business scoping, data strategy, model development, evaluation, API design, containerization, and deployment planning. Representative project domains include adaptive learning, GitHub productivity prediction, LLM-based support QA, bird identification, music recommendation, and EV charging demand forecasting.
+- **Thesis Supervision** — Guide production-oriented thesis work on end-to-end ML products and stable deployment architectures for applied research platforms.
 
 *All presentations and their slides plus the paper abstracts and course materials are available on the [website](https://filtheo.github.io/).*
